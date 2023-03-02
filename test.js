@@ -76,3 +76,33 @@ function addArrays(array1, array2) {
   return arr2
   
 }
+///Geometric Progression Sequence
+
+function geometricSequenceElements(a, r, n){
+  let arr = [a];
+  for(let i=0;i<n - 1;i++) {
+    arr[i] *= r
+    arr.push(arr[i])
+  }
+  let str = a.toString()
+  arr.pop();
+  return str + ', ' + arr.join(', ')
+  
+}
+////Fix string case
+function solve(s){
+  let arr = s.split('');
+  let arr2 = []
+  for (let i =0;i<arr.length;i++) {
+    if(arr[i].toUpperCase() === arr[i]) {
+      arr2.push(arr[i])
+    }
+  }
+  if (arr.length / 2 === arr2.length) {
+    return arr.join('').toLowerCase()
+  } else if (arr.length / 2 > arr2.length) {
+    return arr.join('').toLowerCase()
+  } else if (arr2.length > arr.length/ 2) {
+    return arr.join('').toUpperCase();
+  }
+}
