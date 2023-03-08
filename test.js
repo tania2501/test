@@ -106,3 +106,20 @@ function solve(s){
     return arr.join('').toUpperCase();
   }
 }
+///8 kyu Power JavaScript:
+function numberToPower(number, power){
+
+  if (number===0 && power === 0) {
+    return 0
+  } else if(number === 0) {
+    return number
+  } else if (number > 0 ) {
+    let arr = Array(power).fill(number)
+    let c = 1;
+    for (let i = 0;i<arr.length;++i) {
+      c *= arr[i]
+    }
+    return c
+  }
+      
+}
