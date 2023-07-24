@@ -122,4 +122,31 @@ function numberToPower(number, power){
     return c
   }
       
+}///Remove duplicates from list
+
+function distinct(a) {
+  if(a.length === 1) {
+    return a
+  } else {
+    return a.filter((el, i) => i === a.indexOf(el))
+  }
+  
+}
+
+/////Sum of Multiples
+
+function sumMul(n,m){
+//your idea here
+  if(n === m || n > m) {
+    return 'INVALID'
+  } else {
+    let n1 = n
+    const arr = [n]
+    while((n + n1) < m) {
+      n += n1
+     arr.push(n)
+  }
+   return arr.reduce((a, b) => a + b, 0)
+  }
+  
 }
