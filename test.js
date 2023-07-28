@@ -150,3 +150,23 @@ function sumMul(n,m){
   }
   
 }
+///Get the addresses of all Google Sheets cells in the range
+function getCellAddresses(range) {
+  // ... //
+  
+  let r = range.split(':')
+  let length = +(r[1].replace(/[^0-9, ]/g,"")) - (+(r[0].replace(/[^0-9, ]/g,""))) + 1
+  let num = (+(r[0].replace(/[^0-9, ]/g,"")))
+  let al = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  let int = Array.from({ length: length }, (_, i) => i + num);
+  let str = al.slice(al.indexOf(r[0][0]), al.indexOf(r[1][0]) + 1)
+  let arr = []
+  for(let i=0; i<int.length; i++) {
+    for(let j = 0; j<str.length; j++) {
+      let cell = str[j] + int[i]
+      arr.push(cell)
+    }
+    
+  }
+  return arr.length === 1 ? [] : arr
+}
